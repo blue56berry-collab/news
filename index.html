@@ -1,0 +1,75 @@
+<?php
+// Homepage - CNN Style
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CNN Clone - Homepage</title>
+  <style>
+    body {margin:0;font-family:Arial, sans-serif;background:#f4f4f4;}
+    header {background:#cc0000;color:white;padding:15px;text-align:center;font-size:24px;font-weight:bold;}
+    nav {background:#222;padding:10px;text-align:center;}
+    nav a {color:white;margin:0 15px;text-decoration:none;font-weight:bold;cursor:pointer;}
+    nav a:hover {color:#ffcccb;}
+    .container {padding:20px;max-width:1200px;margin:auto;}
+    .featured {background:white;padding:20px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.2);}
+    .featured h2 {color:#cc0000;}
+    .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .card {background:white;padding:15px;box-shadow:0 2px 6px rgba(0,0,0,0.15);cursor:pointer;}
+    .card img {width:100%;height:150px;object-fit:cover;border-radius:8px;}
+    .card h3 {margin:10px 0;color:#333;}
+    footer {background:#222;color:white;text-align:center;padding:15px;margin-top:30px;}
+    @media(max-width:600px){
+      header{font-size:20px;}
+      nav a{display:block;margin:10px 0;}
+    }
+  </style>
+  <script>
+    function goToCategory(category) {
+      window.location.href = "category.php?cat=" + category;
+    }
+    function goToArticle(id) {
+      window.location.href = "article.php?id=" + id;
+    }
+  </script>
+</head>
+<body>
+  <header>CNN Clone</header>
+  <nav>
+    <a onclick="goToCategory('World')">World</a>
+    <a onclick="goToCategory('Sports')">Sports</a>
+    <a onclick="goToCategory('Technology')">Technology</a>
+    <a onclick="goToCategory('Entertainment')">Entertainment</a>
+  </nav>
+ 
+  <div class="container">
+    <div class="featured">
+      <h2>Breaking News</h2>
+      <p><b>Global Summit 2025:</b> World leaders gather to discuss climate action. <a onclick="goToArticle(1)" style="color:#cc0000;cursor:pointer;">Read More</a></p>
+    </div>
+ 
+    <h2>Latest News</h2>
+    <div class="grid">
+      <div class="card" onclick="goToArticle(2)">
+        <img src="https://via.placeholder.com/400x200" alt="">
+        <h3>Sports: Historic football victory last night</h3>
+        <p>Fans celebrate as underdogs win championship...</p>
+      </div>
+      <div class="card" onclick="goToArticle(3)">
+        <img src="https://via.placeholder.com/400x200" alt="">
+        <h3>Tech: AI breakthroughs shaping the future</h3>
+        <p>Experts reveal new trends in artificial intelligence...</p>
+      </div>
+      <div class="card" onclick="goToArticle(4)">
+        <img src="https://via.placeholder.com/400x200" alt="">
+        <h3>Entertainment: Blockbuster movie tops box office</h3>
+        <p>Critics hail the film as the best of the year...</p>
+      </div>
+    </div>
+  </div>
+ 
+  <footer>&copy; 2025 CNN Clone. All rights reserved.</footer>
+</body>
+</html>
+ 
